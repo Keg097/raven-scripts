@@ -1,2 +1,2 @@
 # raven-scripts
-for load strings
+for load strings/uid auth
