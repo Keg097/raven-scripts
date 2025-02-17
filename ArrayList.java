@@ -23,9 +23,7 @@ void onLoad() {
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
     setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
     setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
-    setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Swap"});
-    setDataSlider("LagRange", "", "%v1ms", new String[]{"Latency"});
-    setDataArray("HitSelect", "", "Mode", new String[]{"Last", "Criticals"});
+    setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
     modules.registerSlider("Animation Speed", "ms", 250, 0, 2000, 10);
@@ -35,7 +33,8 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
-    modules.registerDescription("by @desiyn");
+    modules.registerDescription("Made by @desiyn");
+    modules.registerDescription("Edited by @.key97");
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
