@@ -17,13 +17,20 @@ private boolean lowercase;
 private int resetTicks = 0;
 
 void onLoad() {
-    setDataArray("KillAura", "", "Targets", new String[]{"Single", "Single", "Switch"});
+    setDataArray("ArrayList", "Cape", "Cape", new String[]{"None", "Anime", "Aqua", "Green", "Purple", "Red", "White", "Yellow", "Myau", "Astolfo", "Vape", "Dash"});
+    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Interact A", "Interact B", "Buffer A", "Buffer B"});
+    setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
+    setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
-    setDataSlider("Velocity", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
-    setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
-    setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
+    setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
+    setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
+    setDataSlider("InvManager", "Inventory", "%v1x", new String[]{"Auto sort"});
+    setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Pre", "Post", "Alpha", "Float"});
+    setDataArray("NoFall", "NoFall", "Mode", new String[]{"Spoof", "NoGround", "Packet A", "Packet B", "Timer", "Other"});
     setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
+    setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Ignore-Y", "Jump A", "Jump B", "Jump C", "NoAscend A", "NoAscend B", "NoAscend C"});
+    setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
     modules.registerSlider("Animation Speed", "ms", 250, 0, 2000, 10);
@@ -33,6 +40,7 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
+    modules.registerSlider("Cape", "", 0, new String[]{"None", "Anime", "Aqua", "Green", "Purple", "Red", "White", "Yellow", "Myau", "Astolfo", "Vape", "Dash"});
     modules.registerDescription("Made by @desiyn");
     modules.registerDescription("Edited by @.key97");
 }
