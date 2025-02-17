@@ -18,7 +18,7 @@ private int resetTicks = 0;
 
 void onLoad() {
     setDataArray("ArrayList", "Cape", "Cape", new String[]{"None", "Anime", "Aqua", "Green", "Purple", "Red", "White", "Yellow", "Myau", "Astolfo", "Vape", "Dash"});
-    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Interact A", "Interact B", "Buffer A", "Buffer B"});
+    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact A", "Interact B", "Buffer"});
     setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
