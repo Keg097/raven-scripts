@@ -26,8 +26,8 @@ void onLoad() {
     setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
     setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
     setDataSlider("InvManager", "Inventory", "%v1x", new String[]{"Auto sort"});
-    setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Pre", "Post", "Alpha", "Float"});
-    setDataArray("NoFall", "NoFall", "Mode", new String[]{"Spoof", "NoGround", "Packet A", "Packet B", "Timer", "Other"});
+    setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Watchdog", "Interact", "Invalid", "Jump", "Sneak"});
+    setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Watchdog", "NoGround A", "NoGround B", "Precision", "Position"});
     setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
     setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Ignore-Y", "Jump A", "Jump B", "Jump C", "NoAscend A", "NoAscend B", "NoAscend C"});
     setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
