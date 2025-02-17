@@ -30,7 +30,7 @@ void onLoad() {
     setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
     setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Timer", "NoGround A", "NoGround B", "Precision", "Position"});
     setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
-    setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Float"});
+    setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
     setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant", "Edge", "Float", "Keep-Y A", "Keep-Y B", "Keep-Y C", "Keep-Y D", "Same-Y A", "Same-Y B", "Slide"});
     setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "HurtTime"});
     setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
