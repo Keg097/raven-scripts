@@ -30,7 +30,7 @@ void onLoad() {
     setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Watchdog", "NoGround A", "NoGround B", "Precision", "Position"});
     setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
     setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Watchdog"});
-    setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Ignore-Y", "Jump A", "Jump B", "Jump C", "NoAscend A", "NoAscend B", "NoAscend C"});
+    setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant, "Edge", "Boost", "Keep-Y A", "Keep-Y B", "Keep-Y C", "Keep-Y D", "Same-Y A", "Same-Y B", "Slide"});
     setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
