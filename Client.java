@@ -12,6 +12,7 @@ void onLoad() {
     modules.registerSlider("Background Alpha", "", 70, 0, 255, 5);
     modules.registerSlider("Mode", "", 0, new String[]{"Static", util.color("&cR&6a&ei&an&bb&do&5w"), util.color("&4G&cr&5a&bd&3i&9e&1n&1t")});
     modules.registerSlider("Wave Speed", "s", 5, 0.1, 10, 0.1);
+    modules.registerSlider("Cape", "", 0, new String[]{"None", "Purple", "Red", "Green", "Yellow", "Aqua", "Anime"});
     modules.registerDescription("Made by @desiyn");
     modules.registerDescription("Edited by @.key97");
 }
