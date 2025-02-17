@@ -41,7 +41,6 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
-    modules.registerSlider("Cape", "", 0, new String[]{"None", "Purple", "Red", "Green", "Yellow", "Aqua", "Anime"});
     modules.registerDescription("Made by @desiyn");
     modules.registerDescription("Edited by @.key97");
 }
