@@ -17,11 +17,11 @@ private boolean lowercase;
 private int resetTicks = 0;
 
 void onLoad() {
-    setDataArray("ArrayList", "Cape", "Cape", new String[]{"None", "Anime", "Aqua", "Green", "Purple", "Red", "White", "Yellow", "Myau", "Astolfo", "Vape", "Dash"});
+    setDataArray("ArrayList", "Cape", "Cape", new String[]{"None", "Purple", "Red", "Green", "Yellow", "Aqua", "Anime"});
     setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact A", "Interact B", "Buffer"});
     setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
-    setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
-    setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
+    setDataSlider("Disabler", "Disabler", "Watchdog", new String[]{""});
+    setDataSlider("Velocity", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
     setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
     setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
