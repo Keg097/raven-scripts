@@ -20,7 +20,7 @@ void onLoad() {
     setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact", "Blink", "Buffer"});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
-    setDataSlider("TargetStrafe", "TargetStrafe", "", new String[]{""});
+    setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
     setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
     setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
@@ -36,12 +36,12 @@ void onLoad() {
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
     modules.registerSlider("Animation Speed", "ms", 250, 0, 2000, 10);
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash"});
     modules.registerButton("Lowercase", false);
     modules.registerSlider("Scale", "", 1, 0.5, 2, 0.1);
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash", "Parentheses"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
 }
@@ -214,7 +214,7 @@ void onRenderTick(float partialTicks) {
         }
 
         float scale = (float) mod.get("scale") * textScale;
-        String textToDisplay = displayName + " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode);
+        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode));
 
         float textWidth = (float) render.getFontWidth(textToDisplay) * textScale;
         float scaledTextWidth = textWidth * scale;
@@ -363,14 +363,13 @@ String formatDoubleStr(double val) {
 }
 
 String formatSuffix(String suffix, int mode) {
-    if (suffix.isEmpty()) {
-        suffix = " "; // Add a placeholder for empty suffix
-    }
     switch (mode) {
         case 1: // Brackets
             return "[" + suffix + "]";
         case 2: // Dash
             return "- " + suffix;
+        case 3: // Parentheses
+            return "(" + suffix + ")";
         default: // None
             return suffix;
     }
