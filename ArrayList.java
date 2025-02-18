@@ -42,6 +42,7 @@ void onLoad() {
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash"});
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
@@ -192,6 +193,8 @@ void onRenderTick(float partialTicks) {
 
     updateAnimations();
 
+    int suffixAddonMode = (int) modules.getSlider(scriptName, "Suffix Addons");
+
     long index = 0;
     for (Map<String, Object> mod : mods) {
         boolean animating = (boolean) mod.get("animating");
@@ -210,7 +213,7 @@ void onRenderTick(float partialTicks) {
         }
 
         float scale = (float) mod.get("scale") * textScale;
-        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + util.colorSymbol + "7" + displayValue);
+        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode));
 
         float textWidth = (float) render.getFontWidth(textToDisplay) * textScale;
         float scaledTextWidth = textWidth * scale;
@@ -356,4 +359,15 @@ void sortModules() {
 
 String formatDoubleStr(double val) {
     return val == (long) val ? Long.toString((long) val) : Double.toString(val);
+}
+
+String formatSuffix(String suffix, int mode) {
+    switch (mode) {
+        case 1: // Brackets
+            return "[" + suffix + "]";
+        case 2: // Dash
+            return "- " + suffix;
+        default: // None
+            return suffix;
+    }
 }
