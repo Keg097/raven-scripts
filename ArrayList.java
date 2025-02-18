@@ -41,7 +41,7 @@ void onLoad() {
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Angle Brackets", "Asterisks", "Brackets", "Curly Braces", "Dash", "None", "Parentheses", "Tilde"});
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Angle Brackets", "Brackets", "Curly Braces", "Dash", "None", "Parentheses"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
 }
@@ -366,20 +366,16 @@ String formatSuffix(String suffix, int mode) {
     switch (mode) {
         case 0: // Angle Brackets
             return "<" + suffix + ">";
-        case 1: // Asterisks
-            return "*" + suffix + "*";
-        case 2: // Brackets
+        case 1: // Brackets
             return "[" + suffix + "]";
-        case 3: // Curly Braces
+        case 2: // Curly Braces
             return "{" + suffix + "}";
-        case 4: // Dash
+        case 3: // Dash
             return "- " + suffix;
-        case 5: // None
+        case 4: // None
             return suffix;
-        case 6: // Parentheses
+        case 5: // Parentheses
             return "(" + suffix + ")";
-        case 7: // Tilde
-            return "~ " + suffix;
         default:
             return suffix;
     }
