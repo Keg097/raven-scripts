@@ -18,7 +18,7 @@ void onPreUpdate() {
     if (scaffoldTimer > 0) scaffoldTimer--;
 
     if (player.onGround()) ljing = true;
-    if (!modules.isEnabled("FBFly") && !modules.isEnabled("FBFly") && jumpticks-- <= 0 && !client.isFlying() && scaffoldDisable() == false && dist == -1 && !falling && !player.onGround() && modules.getKillAuraTarget() == null) {
+    if (!modules.isEnabled("Long Jump") && !modules.isEnabled("Long Jump") && jumpticks-- <= 0 && !client.isFlying() && scaffoldDisable() == false && dist == -1 && !falling && !player.onGround() && modules.getKillAuraTarget() == null) {
         falling = true;
         killaura = modules.isEnabled("KillAura");
         modules.disable("KillAura");
