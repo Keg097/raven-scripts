@@ -1,20 +1,20 @@
-private final List<Map<String, Object>> mods = new ArrayList<>();
-private final Map<String, Map<String, String>> customModuleData = new HashMap<>();
-private final List<Map<String, Object>> customDataList = new ArrayList<>();
+final List<Map<String, Object>> mods = new ArrayList<>();
+final Map<String, Map<String, String>> customModuleData = new HashMap<>();
+final List<Map<String, Object>> customDataList = new ArrayList<>();
 
 /* Settings */
-private int direction;
-private int animationMode;
-private int outlineMode;
-private float gap = 1;
-private float lineGap;
-private float textScale;
-private float xOffset;
-private float yOffset;
-private float moduleHeight;
-private int animationDuration;
-private boolean lowercase;
-private int resetTicks = 0;
+int direction;
+int animationMode;
+int outlineMode;
+float gap = 1;
+float lineGap;
+float textScale;
+float xOffset;
+float yOffset;
+float moduleHeight;
+int animationDuration;
+boolean lowercase;
+int resetTicks = 0;
 
 void onLoad() {
     setDataArray("Client", "Cape", "Cape", new String[]{"None", "Purple", "Red", "Green", "Yellow", "Aqua", "Anime"});
@@ -43,8 +43,7 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
-    modules.registerDescription("Made by @desiyn");
-    modules.registerDescription("Edited by @.key97");
+    modules.registerDescription("by @desiyn");
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
