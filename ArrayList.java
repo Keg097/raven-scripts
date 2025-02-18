@@ -27,7 +27,7 @@ void onLoad() {
     setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
     setDataSlider("InvManager", "Inventory", "%v1x", new String[]{"Auto sort"});
     setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
-    setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Timer", "NoGround A", "NoGround B", "Precision", "Position"});
+    setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Packet", "NoGround A", "NoGround B", "Precision", "Position"});
     setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
     setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
     setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
@@ -41,7 +41,7 @@ void onLoad() {
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash", "Parentheses"});
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Angle Brackets", "Asterisks", "Brackets", "Curly Braces", "Dash", "None", "Parentheses", "Tilde"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
 }
@@ -364,13 +364,23 @@ String formatDoubleStr(double val) {
 
 String formatSuffix(String suffix, int mode) {
     switch (mode) {
-        case 1: // Brackets
+        case 0: // Angle Brackets
+            return "<" + suffix + ">";
+        case 1: // Asterisks
+            return "*" + suffix + "*";
+        case 2: // Brackets
             return "[" + suffix + "]";
-        case 2: // Dash
+        case 3: // Curly Braces
+            return "{" + suffix + "}";
+        case 4: // Dash
             return "- " + suffix;
-        case 3: // Parentheses
+        case 5: // None
+            return suffix;
+        case 6: // Parentheses
             return "(" + suffix + ")";
-        default: // None
+        case 7: // Tilde
+            return "~ " + suffix;
+        default:
             return suffix;
     }
 }
