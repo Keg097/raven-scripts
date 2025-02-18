@@ -20,6 +20,7 @@ void onLoad() {
     setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Blink", "Interact", "Buffer", "Desync"});
     setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
+    setDataSlider("TargetStrafe", "TargetStrafe", "Locked", new String[]{""});
     setDataSlider("AntiKnockback", "AntiKnockback", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
     setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
