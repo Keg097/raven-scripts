@@ -41,7 +41,7 @@ void onLoad() {
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Angle Brackets", "Brackets", "Curly Braces", "Dash", "None", "Parentheses"});
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Disabled", "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
 }
@@ -364,15 +364,15 @@ String formatDoubleStr(double val) {
 
 String formatSuffix(String suffix, int mode) {
     switch (mode) {
-        case 0: // Angle Brackets
+        case 1: // Angle Brackets
             return "<" + suffix + ">";
-        case 1: // Brackets
+        case 2: // Brackets
             return "[" + suffix + "]";
-        case 2: // Curly Braces
+        case 3: // Curly Braces
             return "{" + suffix + "}";
-        case 3: // Dash
+        case 4: // Dash
             return "- " + suffix;
-        case 4: // None
+        case 0: // Disabled
             return suffix;
         case 5: // Parentheses
             return "(" + suffix + ")";
