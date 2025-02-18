@@ -214,7 +214,7 @@ void onRenderTick(float partialTicks) {
         }
 
         float scale = (float) mod.get("scale") * textScale;
-        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode));
+        String textToDisplay = displayName + " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode);
 
         float textWidth = (float) render.getFontWidth(textToDisplay) * textScale;
         float scaledTextWidth = textWidth * scale;
@@ -363,6 +363,9 @@ String formatDoubleStr(double val) {
 }
 
 String formatSuffix(String suffix, int mode) {
+    if (suffix.isEmpty()) {
+        suffix = " "; // Add a placeholder for empty suffix
+    }
     switch (mode) {
         case 1: // Brackets
             return "[" + suffix + "]";
