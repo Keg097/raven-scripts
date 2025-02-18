@@ -6,7 +6,7 @@ void onLoad() {
     modules.registerDescription("Edited By @.key97");
     modules.registerButton("Off on scaffold", true);
     modules.registerSlider("Fall Distance", " Blocks", 3, 1, 8, 1);
-    modules.registerSlider("Scaffold Delay", " Seconds", 5, 1, 10, 1);
+    modules.registerSlider("Scaffold Delay", " Seconds", 3, 1, 10, 1);
 }
 
 void onPreUpdate() {
