@@ -17,9 +17,10 @@ boolean lowercase;
 int resetTicks = 0;
 
 void onLoad() {
-    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact A", "Interact B", "Buffer"});
+    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact", "Blink", "Buffer"});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
+    setDataSlider("TargetStrafe", "TargetStrafe", "", new String[]{""});
     setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
     setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
     setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
@@ -35,6 +36,7 @@ void onLoad() {
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
     modules.registerSlider("Animation Speed", "ms", 250, 0, 2000, 10);
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash"});
     modules.registerButton("Lowercase", false);
     modules.registerSlider("Scale", "", 1, 0.5, 2, 0.1);
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
@@ -42,7 +44,6 @@ void onLoad() {
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("by @desiyn");
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"None", "Brackets", "Dash"});
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
