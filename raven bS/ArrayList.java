@@ -17,7 +17,7 @@ boolean lowercase;
 void onLoad() {
     modules.registerDescription("Made By pug");
     modules.registerDescription("Edited By @.key97");
-    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Interact", "Interact", "Buffer", "Buffer"});
+    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Blink", "Interact", "Buffer", "Desync"});
     setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("AntiKnockback", "AntiKnockback", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
