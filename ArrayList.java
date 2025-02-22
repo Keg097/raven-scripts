@@ -54,7 +54,8 @@ void onLoad() {
     modules.registerSlider("Suffix Addons", "", 0, new String[]{"Disabled", "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
     modules.registerSlider("Suffix Color", "", 7, new String[]{"Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple", "Yellow", "White"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
-    modules.registerDescription("by @desiyn");
+    modules.registerDescription("Made by @desiyn");
+    modules.registerDescription("Edited by @.key97");
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
