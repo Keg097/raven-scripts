@@ -1,6 +1,12 @@
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 final List<Map<String, Object>> mods = new ArrayList<>();
 final Map<String, Map<String, String>> customModuleData = new HashMap<>();
 final List<Map<String, Object>> customDataList = new ArrayList<>();
+final Map<String, Boolean> excludedCategories = new HashMap<>();
 
 /* Settings */
 int direction;
@@ -17,6 +23,15 @@ boolean lowercase;
 int resetTicks = 0;
 
 void onLoad() {
+    modules.registerDescription("> Categories");
+    for (String category : modules.getCategories().keySet()) {
+        if (!category.equalsIgnoreCase("profiles")) {
+            excludedCategories.put(category, false);
+            modules.registerButton("Show " + category, true);
+        }
+    }
+    
+    modules.registerDescription("> Settings");
     setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact", "Blink", "Buffer"});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
@@ -131,8 +146,15 @@ void onEnable() {
     mods.clear();
     resetTicks = 0;
     Map<String, List<String>> categories = modules.getCategories();
+    
     for (String category : categories.keySet()) {
         if (category.equalsIgnoreCase("profiles")) continue;
+        
+        boolean categoryEnabled = modules.getButton(scriptName, "Show " + category);
+        excludedCategories.put(category, !categoryEnabled);
+        
+        if (!categoryEnabled) continue;
+        
         List<String> modulesList = categories.get(category);
         for (String module : modulesList) {
             if (EXCLUDED_MODULES.contains(module)) continue;
@@ -158,6 +180,21 @@ void onEnable() {
 
 void onPreUpdate() {
     resetTicks++;
+    
+    boolean needsRebuild = false;
+    for (String category : excludedCategories.keySet()) {
+        boolean currentSetting = !modules.getButton(scriptName, "Show " + category);
+        if (currentSetting != excludedCategories.get(category)) {
+            needsRebuild = true;
+            break;
+        }
+    }
+    
+    if (needsRebuild) {
+        onEnable(); // Rebuild the entire arraylist
+        return;
+    }
+    
     updateEnabledModules();
     lineGap = (float) modules.getSlider(scriptName, "Line Gap");
     moduleHeight = (float) render.getFontHeight() + gap;
