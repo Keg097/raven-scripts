@@ -27,7 +27,7 @@ void onLoad() {
     }
     
     modules.registerDescription("> Settings");
-    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interact", "Blink", "Buffer"});
+    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
     setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
     setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
     setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
