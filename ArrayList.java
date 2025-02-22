@@ -1,8 +1,3 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 final List<Map<String, Object>> mods = new ArrayList<>();
 final Map<String, Map<String, String>> customModuleData = new HashMap<>();
 final List<Map<String, Object>> customDataList = new ArrayList<>();
