@@ -56,6 +56,7 @@ void onLoad() {
 
     modules.registerSlider("Outline Mode", "", 0, new String[]{util.color("&cDisabled"), util.color("Left &c(WIP)"), "Right", util.color("Full &c(WIP)")});
     modules.registerSlider("Suffix Addons", "", 0, new String[]{"Disabled", "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
+    modules.registerSlider("Suffix Color", "", 7, new String[]{"Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple", "Yellow", "White"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
 }
 
@@ -270,6 +271,8 @@ void onRenderTick(float partialTicks) {
     float waveSpeedCached = waveSpeed;
     boolean lowercaseCached = lowercase;
     int suffixAddonMode = (int) modules.getSlider(scriptName, "Suffix Addons");
+    int suffixColorIndex = (int) modules.getSlider(scriptName, "Suffix Color");
+    String suffixColor = getColorCode(suffixColorIndex);
 
     for (Map<String, Object> mod : mods) {
         boolean animating = (boolean) mod.get("animating");
@@ -288,7 +291,7 @@ void onRenderTick(float partialTicks) {
         }
 
         float scale = (float) mod.get("scale") * textScaleCached;
-        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + util.colorSymbol + "7" + formatSuffix(displayValue, suffixAddonMode));
+        String textToDisplay = displayName + (displayValue.isEmpty() ? "" : " " + suffixColor + formatSuffix(displayValue, suffixAddonMode));
 
         float textWidth = (float) render.getFontWidth(textToDisplay) * textScaleCached;
         float scaledTextWidth = textWidth * scale;
@@ -490,5 +493,27 @@ String formatSuffix(String suffix, int mode) {
             return "(" + suffix + ")";
         default:
             return suffix;
+    }
+}
+
+String getColorCode(int index) {
+    switch (index) {
+        case 0: return util.colorSymbol + "0"; // Black
+        case 1: return util.colorSymbol + "1"; // Dark Blue
+        case 2: return util.colorSymbol + "2"; // Dark Green
+        case 3: return util.colorSymbol + "3"; // Dark Aqua
+        case 4: return util.colorSymbol + "4"; // Dark Red
+        case 5: return util.colorSymbol + "5"; // Dark Purple
+        case 6: return util.colorSymbol + "6"; // Gold
+        case 7: return util.colorSymbol + "7"; // Gray
+        case 8: return util.colorSymbol + "8"; // Dark Gray
+        case 9: return util.colorSymbol + "9"; // Blue
+        case 10: return util.colorSymbol + "a"; // Green
+        case 11: return util.colorSymbol + "b"; // Aqua
+        case 12: return util.colorSymbol + "c"; // Red
+        case 13: return util.colorSymbol + "d"; // Light Purple
+        case 14: return util.colorSymbol + "e"; // Yellow
+        case 15: return util.colorSymbol + "f"; // White
+        default: return util.colorSymbol + "7"; // Default to Gray
     }
 }
