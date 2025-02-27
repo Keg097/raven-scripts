@@ -234,10 +234,16 @@ void updateSliders() {
             setDataSlider("Safewalk", "SafeWalk", "Blatant", new String[]{""});
         }
 
-        if (modules.getButton("Long Jump", "Allow strafe")) {
-            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Vanilla", "FireballStrafe"});
+        if (modules.getButton("AntiBot", "Filter watchdog")) {
+            setDataSlider("AntiBot", "AntiBot", "Hypixel", new String[]{""});
         } else {
-            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Vanilla", "Fireball"});
+            setDataSlider("AntiBot", "AntiBot", "General", new String[]{""});
+        }
+
+        if (modules.getButton("Long Jump", "Allow strafe")) {
+            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "FireballStrafe"});
+        } else {
+            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
         }
 
         if (modules.getButton("Scaffold", "Jump facing forward")) {
@@ -263,6 +269,12 @@ void updateSliders() {
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "Hurt-Time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Motion", "Float"});
         setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
+
+        if (modules.getButton("AntiBot", "Filter watchdog")) {
+            setDataSlider("AntiBot", "AntiBot", "Watchdog", new String[]{""});
+        } else {
+            setDataSlider("AntiBot", "AntiBot", "Universal", new String[]{""});
+        }
         
         if (modules.getButton("Long Jump", "Allow strafe")) {
             setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Motion", "ItemDamageStrafe"});
