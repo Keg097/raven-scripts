@@ -27,22 +27,6 @@ void onLoad() {
     }
     
     modules.registerDescription("> Settings");
-    setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
-    setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
-    setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
-    setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
-    setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
-    setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
-    setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
-    setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
-    setDataSlider("InvManager", "Inventory", "%v1x", new String[]{"Auto sort"});
-    setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
-    setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Packet", "NoGround A", "NoGround B", "Precision", "Position"});
-    setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
-    setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
-    setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
-    setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "Hurt-Time"});
-    setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
     modules.registerSlider("Direction", "", 1, new String[]{"Up", "Down"});
     modules.registerSlider("Animations", "", 0, new String[]{"Scale Right", "Scale Center"});
     modules.registerSlider("Animation Speed", "ms", 250, 0, 2000, 10);
@@ -52,6 +36,7 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Suffix Addons", "", 0, new String[]{"Disabled", "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
+    modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Standard"});
     modules.registerSlider("Suffix Color", "", 7, new String[]{"Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple", "Yellow", "White"});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("Made by @desiyn");
@@ -133,6 +118,17 @@ void updateCustomData(Map<String, Object> customData) {
             break;
     }
 
+    if ("NoSlow".equals(moduleName)) {
+        int noSlowPlusMode = (int) modules.getSlider("Speed", "Speed");
+        int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
+
+        if (modules.isEnabled("Speed")) {
+            if (noSlowPlusMode == 1 && "Float".equals(overrideValue)) {
+                overrideValue = "Boost";
+            }
+        }
+    }
+
     Map<String, String> data = new HashMap<>();
     data.put("alias", alias);
     data.put("overrideValue", overrideValue);
@@ -212,6 +208,68 @@ void updateSliders() {
     outlineMode = (int) modules.getSlider(scriptName, "Outline Mode");
 
     updateColors();
+
+    int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
+    
+    if (alternativeSuffixMode == 1) { // Standard
+        setDataArray("KillAura", "", "Targets", new String[]{"Single", "Single", "Switch"});
+        setDataArray("Bhop", "Speed", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt-Time"});
+        setDataArray("Speed", "Momentum", "Speed", new String[]{"Vanilla", "Hypixel"});
+        setDataSlider("AntiVoid", "AntiVoid", "Hypixel", new String[]{""});
+        setDataSlider("Disabler", "Disabler", "Hypixel", new String[]{""});
+        setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
+        setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
+        setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
+        setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("InvManager", "InvManager", "%v1x", new String[]{"Auto sort"});
+        setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Hypixel", "Interact", "Invalid", "Jump", "Sneak"});
+        setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Hypixel", "NoGround A", "NoGround B", "Precision", "Position"});
+        setDataArray("BedAura", "BedNuker", "Break mode", new String[]{"Legit", "Instant", "Swap"});
+        setDataArray("InvMove", "InvWalk", "Inventory", new String[]{"Disabled", "Hypixel", "Blink", "Close"});
+
+        if (modules.getButton("SafeWalk", "Sneak")) {
+            setDataSlider("SafeWalk", "SafeWalk", "Legit", new String[]{""});
+        } else {
+            setDataSlider("SafeWalk", "SafeWalk", "Blatant", new String[]{""});
+        }
+
+        if (modules.getButton("Long Jump", "Allow strafe")) {
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Flat Strafe", "High Strafe"});
+        } else {
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Flat", "High"});
+        }
+
+        if (modules.getButton("Scaffold", "Jump facing forward")) {
+            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"ResetStrict", "ResetSimple", "ResetLazy", "ResetOffset"});
+        } else {
+            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
+        }
+    } else { // Bypass
+        setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
+        setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
+        setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
+        setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
+        setDataSlider("AntiKnockback", "", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
+        setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
+        setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("InvManager", "Inventory", "%v1x", new String[]{"Auto sort"});
+        setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
+        setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Packet", "NoGround A", "NoGround B", "Precision", "Position"});
+        setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
+        setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
+        setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
+        setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "Hurt-Time"});
+        setDataArray("Speed", "Speed", "Speed", new String[]{"Motion", "Float"});
+        setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
+
+        if (modules.getButton("SafeWalk", "Sneak")) {
+            setDataSlider("SafeWalk", "SafeWalk", "Sneak", new String[]{""});
+        } else {
+            setDataSlider("SafeWalk", "SafeWalk", "Motion", new String[]{""});
+        }
+    }
     
     for (Map<String, Object> customData : customDataList) {
         updateCustomData(customData);
