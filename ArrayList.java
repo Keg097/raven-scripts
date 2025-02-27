@@ -194,7 +194,7 @@ void onPreUpdate() {
     xOffset = (float) modules.getSlider(scriptName, "X-Offset");
     yOffset = (float) modules.getSlider(scriptName, "Y-Offset");
 
-    if (resetTicks == 1 || resetTicks % 5 == 0) {
+    if (resetTicks == 1 || resetTicks % 20 == 0) {
         updateSliders();
     }
 }
