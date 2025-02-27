@@ -224,7 +224,7 @@ void updateSliders() {
         setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
         setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
         setDataSlider("InvManager", "InvManager", "%v1x", new String[]{"Auto sort"});
-        setDataArray("NoSlow", "", "Mode", new String[]{"Vanilla", "Hypixel", "Interact", "Invalid", "Jump", "Sneak"});
+        setDataArray("NoSlowdown", "", "Mode", new String[]{"Vanilla", "Hypixel", "Interact", "Invalid", "Jump", "Sneak"});
         setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Hypixel", "NoGround A", "NoGround B", "Precision", "Position"});
         setDataArray("BedAura", "BedNuker", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("InvMove", "InvWalk", "Inventory", new String[]{"Disabled", "Hypixel", "Blink", "Close"});
