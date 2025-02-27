@@ -217,6 +217,7 @@ void updateSliders() {
         setDataArray("Speed", "Momentum", "Speed", new String[]{"Vanilla", "Hypixel"});
         setDataSlider("AntiVoid", "AntiVoid", "Hypixel", new String[]{""});
         setDataSlider("Disabler", "Disabler", "Hypixel", new String[]{""});
+        setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
         setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
