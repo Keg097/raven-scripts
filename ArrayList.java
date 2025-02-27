@@ -228,7 +228,7 @@ void updateSliders() {
         setDataArray("BedAura", "BedNuker", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("InvMove", "InvWalk", "Inventory", new String[]{"Disabled", "Hypixel", "Blink", "Close"});
 
-        if (modules.getButton("Safewalk", "Sneak")) {
+        if (modules.getButton("Safewalk", "Shift")) {
             setDataSlider("Safewalk", "SafeWalk", "Legit", new String[]{""});
         } else {
             setDataSlider("Safewalk", "SafeWalk", "Blatant", new String[]{""});
@@ -270,7 +270,7 @@ void updateSliders() {
             setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Motion", "ItemDamage"});
         }
 
-        if (modules.getButton("Safewalk", "Sneak")) {
+        if (modules.getButton("Safewalk", "Shift")) {
             setDataSlider("Safewalk", "SafeWalk", "Sneak", new String[]{""});
         } else {
             setDataSlider("Safewalk", "SafeWalk", "Motion", new String[]{""});
