@@ -228,16 +228,16 @@ void updateSliders() {
         setDataArray("BedAura", "BedNuker", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("InvMove", "InvWalk", "Inventory", new String[]{"Disabled", "Hypixel", "Blink", "Close"});
 
-        if (modules.getButton("SafeWalk", "Sneak")) {
-            setDataSlider("SafeWalk", "SafeWalk", "Legit", new String[]{""});
+        if (modules.getButton("Safewalk", "Sneak")) {
+            setDataSlider("Safewalk", "SafeWalk", "Legit", new String[]{""});
         } else {
-            setDataSlider("SafeWalk", "SafeWalk", "Blatant", new String[]{""});
+            setDataSlider("Safewalk", "SafeWalk", "Blatant", new String[]{""});
         }
 
         if (modules.getButton("Long Jump", "Allow strafe")) {
-            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Flat Strafe", "High Strafe"});
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Vanilla", "FireballStrafe"});
         } else {
-            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Flat", "High"});
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Vanilla", "Fireball"});
         }
 
         if (modules.getButton("Scaffold", "Jump facing forward")) {
@@ -263,11 +263,17 @@ void updateSliders() {
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "Hurt-Time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Motion", "Float"});
         setDataArray("InvMove", "", "Inventory", new String[]{"Disabled", "Vanilla", "Blink", "Close"});
-
-        if (modules.getButton("SafeWalk", "Sneak")) {
-            setDataSlider("SafeWalk", "SafeWalk", "Sneak", new String[]{""});
+        
+        if (modules.getButton("Long Jump", "Allow strafe")) {
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Motion", "ItemDamageStrafe"});
         } else {
-            setDataSlider("SafeWalk", "SafeWalk", "Motion", new String[]{""});
+            setDataArray("Long Jump", "LongJump", "Mode", new String[]{"Motion", "ItemDamage"});
+        }
+
+        if (modules.getButton("Safewalk", "Sneak")) {
+            setDataSlider("Safewalk", "SafeWalk", "Sneak", new String[]{""});
+        } else {
+            setDataSlider("Safewalk", "SafeWalk", "Motion", new String[]{""});
         }
     }
     
