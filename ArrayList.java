@@ -238,7 +238,7 @@ void updateSliders() {
         if (modules.getButton("AntiBot", "Filter watchdog")) {
             setDataSlider("AntiBot", "AntiBot", "Hypixel", new String[]{""});
         } else {
-            setDataSlider("AntiBot", "AntiBot", "General", new String[]{""});
+            setDataSlider("AntiBot", "AntiBot", "Generic", new String[]{""});
         }
 
         if (modules.getButton("Long Jump", "Allow strafe")) {
