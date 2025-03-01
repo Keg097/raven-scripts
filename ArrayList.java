@@ -212,7 +212,7 @@ void updateSliders() {
     int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
     
     if (alternativeSuffixMode == 1) { // Standard
-        setDataArray("KillAura", "", "Targets", new String[]{"Single", "Single", "Switch"});
+        setDataArray("KillAura", "Aura", "Targets", new String[]{"Single", "Single", "Switch"});
         setDataArray("Bhop", "Speed", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt-Time"});
         setDataArray("Speed", "Momentum", "Speed", new String[]{"Vanilla", "Hypixel"});
         setDataSlider("AntiVoid", "AntiVoid", "Hypixel", new String[]{""});
@@ -253,7 +253,7 @@ void updateSliders() {
             setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
         }
     } else { // Bypass
-        setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
+        setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
         setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
         setDataSlider("TargetStrafe", "TargetStrafe", "Circle", new String[]{""});
