@@ -275,7 +275,7 @@ void updateSliders() {
 
         setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "None"});
         if (modules.getSlider("KillAura", "Rotation mode") > 1) {
-            setDataSlider("KillAura", "KillAura", "v1", new String[]{"FOV"});
+            setDataSlider("KillAura", "KillAura", "v1%", new String[]{"FOV"});
         }
 
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
