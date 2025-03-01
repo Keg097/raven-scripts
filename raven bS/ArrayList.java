@@ -228,7 +228,7 @@ void updateSliders() {
     int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
     
     if (alternativeSuffixMode == 1) { // Standard
-        setDataArray("KillAura", "", "Targets", new String[]{"Single", "Single", "Switch"});
+        setDataArray("KillAura", "Aura", "Targets", new String[]{"Single", "Single", "Switch"});
         setDataSlider("AntiVoid", "AntiVoid", "Hypixel", new String[]{""});
         setDataSlider("Disabler", "Disabler", "Hypixel", new String[]{""});
         setDataSlider("TargetStrafe", "TargetStrafe", "Locked", new String[]{""});
@@ -266,7 +266,7 @@ void updateSliders() {
             setDataArray("Bhop", "Speed", "Mode", new String[]{"Strafe", "Ground", "Low", "Low", "Low"});
         }
     } else { // Bypass
-        setDataArray("KillAura", "", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Blink", "Interact", "Buffer", "Desync"});
+        setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Visual", "Semi", "Blink", "Interact", "Buffer", "Desync"});
         setDataSlider("AntiVoid", "AntiVoid", "Blink", new String[]{""});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
         setDataSlider("TargetStrafe", "TargetStrafe", "Locked", new String[]{""});
