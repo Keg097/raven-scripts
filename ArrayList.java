@@ -259,7 +259,6 @@ void updateSliders() {
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
         setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
         setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
-        setDataSlider("InvManager", "InvManager", "", new String[]{""});
         setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
         setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
         setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
@@ -267,12 +266,7 @@ void updateSliders() {
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
 
-        if (modules.getButton("Long Jump", "Allow strafe")) {
-            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "FireballStrafe"});
-        } else {
-            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
-        }
-    } else { // Bypass
+    } else if (alternativeSuffixMode == 0) { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
         setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
