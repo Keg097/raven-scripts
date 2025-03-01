@@ -255,9 +255,6 @@ void updateSliders() {
         }
     } else if (alternativeSuffixMode == 2) { // Raven
         setDataArray("KillAura", "KillAura", "Rotation", new String[]{"Silent", "Lock view", "NoRotationSet"});
-        setDataSlider("Disabler", "Disabler", "", new String[]{""});
-        setDataSlider("Virtu", "Virtu", "", new String[]{""});
-        setDataSlider("TargetStrafe", "TargetStrafe", "", new String[]{""});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
         setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
@@ -266,10 +263,15 @@ void updateSliders() {
         setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
         setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
         setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
-        setDataArray("Long Jump", "Long Jump", "", new String[]{""});
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
+
+        if (modules.getButton("Long Jump", "Allow strafe")) {
+            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "FireballStrafe"});
+        } else {
+            setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
+        }
     } else { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
