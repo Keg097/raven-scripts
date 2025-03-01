@@ -119,17 +119,6 @@ void updateCustomData(Map<String, Object> customData) {
             break;
     }
 
-    if ("NoSlow".equals(moduleName)) {
-        int noSlowPlusMode = (int) modules.getSlider("Speed", "Speed");
-        int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
-
-        if (modules.isEnabled("Speed")) {
-            if (noSlowPlusMode == 1 && "Float".equals(overrideValue)) {
-                overrideValue = "Boost";
-            }
-        }
-    }
-
     Map<String, String> data = new HashMap<>();
     data.put("alias", alias);
     data.put("overrideValue", overrideValue);
@@ -286,7 +275,7 @@ void updateSliders() {
         setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
         setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Packet", "NoGround A", "NoGround B", "Precision", "Position"});
         setDataArray("BedAura", "", "Break mode", new String[]{"Legit", "Instant", "Dynamic"});
-        setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
+        setDataArray("Long Jump", "Flight", "Mode", new String[]{"Motion", "Fireball"});
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Walk", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "GroundStrafe", "GlideStrafe", "7 Tick", "8 Tick AirStrafe", "9 Tick", "9 Tick AirStrafe", "Hurt-Time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Motion", "Float"});
