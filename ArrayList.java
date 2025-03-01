@@ -16,6 +16,8 @@ float moduleHeight;
 int animationDuration;
 boolean lowercase;
 int resetTicks = 0;
+int sliderUpdateTicks;
+int buttonUpdateTicks;
 
 void onLoad() {
     modules.registerDescription("> Categories");
@@ -39,6 +41,10 @@ void onLoad() {
     modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Server", "Raven"});
     modules.registerSlider("Suffix Color", "", 7, new String[]{util.color("&0Black"), util.color("&1Dark Blue"), util.color("&2Dark Green"), util.color("&3Dark Aqua"), util.color("&4Dark Red"), util.color("&5Dark Purple"), util.color("&6Gold"), util.color("&7Gray"), util.color("&8Dark Gray"), util.color("&9Blue"), util.color("&aGreen"), util.color("&bAqua"), util.color("&cRed"), util.color("&dLight Purple"), util.color("&eYellow"), util.color("&fWhite")});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
+    modules.registerDescription("> Performance");
+    modules.registerSlider("Slider Update Ticks", "ticks", 20, 1, 100, 1);
+    modules.registerSlider("Button Update Ticks", "ticks", 60, 1, 100, 1);
+    modules.registerDescription("> Credits");
     modules.registerDescription("Made by @Pug");
     modules.registerDescription("Ported by @desiyn");
     modules.registerDescription("Edited by @.key97");
@@ -184,7 +190,8 @@ void onPreUpdate() {
     xOffset = (float) modules.getSlider(scriptName, "X-Offset");
     yOffset = (float) modules.getSlider(scriptName, "Y-Offset");
 
-    if (resetTicks == 1 || resetTicks % 20 == 0) {
+    sliderUpdateTicks = (int) modules.getSlider(scriptName, "Slider Update Ticks");
+    if (resetTicks == 1 || resetTicks % sliderUpdateTicks == 0) {
         updateSliders();
     }
 }
@@ -383,7 +390,8 @@ void updateEnabledModules() {
     long now = client.time();
     List<String> previousEnabledModules = new ArrayList<>();
 
-    if (resetTicks < 60 || resetTicks % 20 == 0) {
+    buttonUpdateTicks = (int) modules.getSlider(scriptName, "Button Update Ticks");
+    if (resetTicks < buttonUpdateTicks || resetTicks % buttonUpdateTicks == 0) {
         updateButtonStates();
     }
 
