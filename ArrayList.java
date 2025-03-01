@@ -264,7 +264,11 @@ void updateSliders() {
         setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
-        setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
+        setDataArray("Speed", "Speed", "", new String[]{"Vanilla", "Float"});
+        setDataArray("InvMove", "", "", new String[]{""});
+        setDataArray("Long Jump", "", "", new String[]{""});
+        setDataSlider("Safewalk", "", "", new String[]{""});
+        setDataSlider("AntiBot", "", "", new String[]{""});
 
     } else if (alternativeSuffixMode == 0) { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
