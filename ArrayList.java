@@ -256,7 +256,6 @@ void updateSliders() {
         }
 
     } else if (alternativeSuffixMode == 3) { // Raven
-        setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "NoRotationSet"});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
         setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
@@ -273,6 +272,11 @@ void updateSliders() {
         setDataSlider("Disabler", "", "", new String[]{""});
         setDataSlider("Virtu", "", "", new String[]{""});
         setDataSlider("TargetStrafe", "", "", new String[]{""});
+
+        setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "None"});
+        if (modules.getSlider("Scaffold", "Rotation mode") > 2) {
+            setDataSlider("KillAura", "KillAura", "v1%", new String[]{"FOV"});
+        }
 
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         if (modules.getSlider("Scaffold", "Fast scaffold") == 0) { // Disabled mode
