@@ -258,7 +258,6 @@ void updateSliders() {
         setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
         setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
         setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
-        setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
         setDataArray("InvMove", "", "", new String[]{""});
@@ -268,6 +267,11 @@ void updateSliders() {
         setDataSlider("Disabler", "", "", new String[]{""});
         setDataSlider("Virtu", "", "", new String[]{""});
         setDataSlider("TargetStrafe", "", "", new String[]{""});
+
+        setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
+        if (modules.getSlider("Scaffold", "Fast scaffold") == 0) { // Disabled mode
+            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
+        }
 
     } else if (alternativeSuffixMode == 0) { // Disabled
         setDataArray("KillAura", "KillAura", "", new String[]{""});
