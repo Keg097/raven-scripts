@@ -228,7 +228,7 @@ void updateSliders() {
 
         setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"None", "Smooth", "Spin"});
         if (modules.getSlider("Scaffold", "Rotation (fake)") > 0) { // Rotation (fake) slider past None mode
-            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"None", "Smooth", "Spin"});
+            setDataArray("Scaffold", "Scaffold", "Rotation (fake)", new String[]{"None", "Smooth", "Spin"});
         } else {
             if (modules.getButton("Scaffold", "Jump facing forward")) {
                 setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"ResetStrict", "ResetSimple", "ResetLazy", "ResetOffset"});
