@@ -45,9 +45,9 @@ void onLoad() {
     modules.registerSlider("Slider Update Ticks", "ticks", 20, 1, 100, 1);
     modules.registerSlider("Button Update Ticks", "ticks", 60, 1, 100, 1);
     modules.registerDescription("> Credits");
-    modules.registerDescription("Made by @Pug");
-    modules.registerDescription("Ported by @desiyn");
-    modules.registerDescription("Edited by @.key97");
+    modules.registerDescription(util.color("&fMade by @Pug"));
+    modules.registerDescription(util.color("&fPorted by @desiyn"));
+    modules.registerDescription(util.color("&fEdited by @.key97"));
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
