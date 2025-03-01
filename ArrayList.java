@@ -45,9 +45,9 @@ void onLoad() {
     modules.registerSlider("Slider Update Ticks", "ticks", 20, 1, 100, 1);
     modules.registerSlider("Button Update Ticks", "ticks", 60, 1, 100, 1);
     modules.registerDescription("> Credits");
-    modules.registerDescription(util.color("&fMade by @Pug"));
-    modules.registerDescription(util.color("&fPorted by @desiyn"));
-    modules.registerDescription(util.color("&fEdited by @.key97"));
+    modules.registerDescription("Made by @Pug");
+    modules.registerDescription("Ported by @desiyn");
+    modules.registerDescription("Edited by @.key97");
 }
 
 void setDataStatic(String moduleName, String alias, String overrideValue) {
@@ -260,7 +260,7 @@ void updateSliders() {
         setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
-        setDataArray("Speed", "", "Speed", new String[]{"Vanilla", "Float"});
+        setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
         setDataArray("InvMove", "", "", new String[]{""});
         setDataArray("Long Jump", "", "", new String[]{""});
         setDataSlider("Safewalk", "", "", new String[]{""});
