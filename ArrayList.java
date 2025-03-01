@@ -226,6 +226,17 @@ void updateSliders() {
         setDataArray("BedAura", "BedNuker", "Break mode", new String[]{"Legit", "Instant", "Swap"});
         setDataArray("InvMove", "InvWalk", "Inventory", new String[]{"Disabled", "Hypixel", "Blink", "Close"});
 
+        setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"None", "Smooth", "Spin"});
+        if (modules.getSlider("Scaffold", "Rotation (fake)") > 0) { // Rotation (fake) slider past None mode
+            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"None", "Smooth", "Spin"});
+        } else {
+            if (modules.getButton("Scaffold", "Jump facing forward")) {
+                setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"ResetStrict", "ResetSimple", "ResetLazy", "ResetOffset"});
+            } else {
+                setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
+            }
+        }
+
         if (modules.getButton("Safewalk", "Shift")) {
             setDataSlider("Safewalk", "SafeWalk", "Legit", new String[]{""});
         } else {
@@ -244,11 +255,6 @@ void updateSliders() {
             setDataArray("Long Jump", "Flight", "Mode", new String[]{"Vanilla", "Fireball"});
         }
 
-        if (modules.getButton("Scaffold", "Jump facing forward")) {
-            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"ResetStrict", "ResetSimple", "ResetLazy", "ResetOffset"});
-        } else {
-            setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
-        }
     } else if (alternativeSuffixMode == 3) { // Raven
         setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "NoRotationSet"});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
