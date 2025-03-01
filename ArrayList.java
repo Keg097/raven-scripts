@@ -34,12 +34,12 @@ void onLoad() {
     modules.registerSlider("Scale", "", 1, 0.5, 2, 0.1);
     modules.registerSlider("X-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
-    modules.registerSlider("Outline Mode", "", 0, new String[]{"Disabled", "Left (WIP)", "Right", "Full (WIP)"});
-    modules.registerSlider("Suffix Addons", "", 0, new String[]{"Disabled", "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
+    modules.registerSlider("Outline Mode", "", 0, new String[]{util.color("&cDisabled"), "Left (WIP)", "Right", "Full (WIP)"});
+    modules.registerSlider("Suffix Addons", "", 0, new String[]{util.color("&cDisabled"), "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
     modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Standard"});
-    modules.registerSlider("Suffix Color", "", 7, new String[]{"Black", "Dark Blue", "Dark Green", "Dark Aqua", "Dark Red", "Dark Purple", "Gold", "Gray", "Dark Gray", "Blue", "Green", "Aqua", "Red", "Light Purple", "Yellow", "White"});
-    modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
-    modules.registerDescription("Made by @desiyn");
+    modules.registerSlider("Suffix Color", "", 7, new String[]{util.color("&0Black"), util.color("&1Dark Blue"), util.color("&2Dark Green"), util.color("&3Dark Aqua"), util.color("&4Dark Red"), util.color("&5Dark Purple"), util.color("&6Gold"),, util.color("&7Gray"), util.color("&8Dark Gray"), util.color("&9Blue"), util.color("&aGreen"), util.color("&bAqua"), util.color("&cRed"), util.color("&dLight Purple"), util.color("&eYellow"), util.color("&fWhite")});    modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
+    modules.registerDescription("Made by @Pug");
+    modules.registerDescription("Ported by @desiyn");
     modules.registerDescription("Edited by @.key97");
 }
 
