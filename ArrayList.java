@@ -38,7 +38,7 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{util.color("&cDisabled"), "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Suffix Addons", "", 0, new String[]{util.color("&cDisabled"), "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
-    modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Server", "Raven"});
+    modules.registerSlider("Alternative Suffixes", "", 0, new String[]{util.color("&cDisabled"), "Bypass", "Server", "Raven"});
     modules.registerSlider("Suffix Color", "", 7, new String[]{util.color("&0Black"), util.color("&1Dark Blue"), util.color("&2Dark Green"), util.color("&3Dark Aqua"), util.color("&4Dark Red"), util.color("&5Dark Purple"), util.color("&6Gold"), util.color("&7Gray"), util.color("&8Dark Gray"), util.color("&9Blue"), util.color("&aGreen"), util.color("&bAqua"), util.color("&cRed"), util.color("&dLight Purple"), util.color("&eYellow"), util.color("&fWhite")});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("> Performance");
@@ -208,7 +208,7 @@ void updateSliders() {
 
     int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
     
-    if (alternativeSuffixMode == 1) { // Server
+    if (alternativeSuffixMode == 2) { // Server
         setDataArray("KillAura", "Aura", "Targets", new String[]{"Single", "Single", "Switch"});
         setDataArray("Bhop", "Speed", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt-Time"});
         setDataArray("Speed", "Momentum", "Speed", new String[]{"Vanilla", "Hypixel"});
@@ -249,7 +249,7 @@ void updateSliders() {
         } else {
             setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
         }
-    } else if (alternativeSuffixMode == 2) { // Raven
+    } else if (alternativeSuffixMode == 3) { // Raven
         setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "NoRotationSet"});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
@@ -269,7 +269,27 @@ void updateSliders() {
         setDataSlider("Virtu", "", "", new String[]{""});
         setDataSlider("TargetStrafe", "", "", new String[]{""});
 
-    } else if (alternativeSuffixMode == 0) { // Bypass
+    } else if (alternativeSuffixMode == 0) { // Disabled
+        setDataArray("KillAura", "KillAura", "", new String[]{""});
+        setDataSlider("AntiKnockback", "Velocity", "", new String[]{""});
+        setDataSlider("FastMine", "", "", new String[]{""});
+        setDataSlider("Jump Reset", "", "", new String[]{""});
+        setDataSlider("WTap", "", "", new String[]{""});
+        setDataArray("NoSlow", "", "", new String[]{""});
+        setDataArray("NoFall", "", "", new String[]{""});
+        setDataArray("BedAura", "", "", new String[]{""});
+        setDataArray("Scaffold", "", "", new String[]{""});
+        setDataArray("Bhop", "", "", new String[]{""});
+        setDataArray("Speed", "", "", new String[]{""});
+        setDataArray("InvMove", "", "", new String[]{""});
+        setDataArray("Long Jump", "", "", new String[]{""});
+        setDataSlider("Safewalk", "", "", new String[]{""});
+        setDataSlider("AntiBot", "", "", new String[]{""});
+        setDataSlider("Disabler", "", "", new String[]{""});
+        setDataSlider("Virtu", "", "", new String[]{""});
+        setDataSlider("TargetStrafe", "", "", new String[]{""});
+
+    } else if (alternativeSuffixMode == 1) { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
         setDataSlider("Virtu", "Virtu", "Private", new String[]{""});
