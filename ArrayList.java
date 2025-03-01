@@ -254,7 +254,7 @@ void updateSliders() {
             setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
         }
     } else if (alternativeSuffixMode == 2) { // Raven
-        setDataArray("KillAura", "KillAura", "Rotation", new String[]{"Silent", "Lock view", "NoRotationSet"});
+        setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "NoRotationSet"});
         setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
         setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
         setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
