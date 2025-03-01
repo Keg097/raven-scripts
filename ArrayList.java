@@ -270,7 +270,6 @@ void updateSliders() {
         setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
         setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
         setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
-        }
     } else { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
         setDataSlider("Disabler", "Disabler", "FastFall", new String[]{""});
