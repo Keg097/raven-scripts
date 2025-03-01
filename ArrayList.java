@@ -271,6 +271,7 @@ void updateSliders() {
         setDataSlider("AntiBot", "", "", new String[]{""});
         setDataSlider("Disabler", "", "", new String[]{""});
         setDataSlider("Virtu", "", "", new String[]{""});
+        setDataSlider("TargetStrafe", "", "", new String[]{""});
 
     } else if (alternativeSuffixMode == 0) { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
