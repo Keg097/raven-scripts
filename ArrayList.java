@@ -36,7 +36,7 @@ void onLoad() {
     modules.registerSlider("Y-Offset", "", 1, 0, 50, 1);
     modules.registerSlider("Outline Mode", "", 0, new String[]{util.color("&cDisabled"), "Left (WIP)", "Right", "Full (WIP)"});
     modules.registerSlider("Suffix Addons", "", 0, new String[]{util.color("&cDisabled"), "Angle Brackets", "Brackets", "Curly Braces", "Dash", "Parentheses"});
-    modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Standard"});
+    modules.registerSlider("Alternative Suffixes", "", 0, new String[]{"Bypass", "Server", "Raven"});
     modules.registerSlider("Suffix Color", "", 7, new String[]{util.color("&0Black"), util.color("&1Dark Blue"), util.color("&2Dark Green"), util.color("&3Dark Aqua"), util.color("&4Dark Red"), util.color("&5Dark Purple"), util.color("&6Gold"), util.color("&7Gray"), util.color("&8Dark Gray"), util.color("&9Blue"), util.color("&aGreen"), util.color("&bAqua"), util.color("&cRed"), util.color("&dLight Purple"), util.color("&eYellow"), util.color("&fWhite")});
     modules.registerSlider("Line Gap", "", 2, 0, 5, 0.1);
     modules.registerDescription("Made by @Pug");
@@ -212,7 +212,7 @@ void updateSliders() {
 
     int alternativeSuffixMode = (int) modules.getSlider(scriptName, "Alternative Suffixes");
     
-    if (alternativeSuffixMode == 1) { // Standard
+    if (alternativeSuffixMode == 1) { // Server
         setDataArray("KillAura", "Aura", "Targets", new String[]{"Single", "Single", "Switch"});
         setDataArray("Bhop", "Speed", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt-Time"});
         setDataArray("Speed", "Momentum", "Speed", new String[]{"Vanilla", "Hypixel"});
@@ -252,6 +252,24 @@ void updateSliders() {
             setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"ResetStrict", "ResetSimple", "ResetLazy", "ResetOffset"});
         } else {
             setDataArray("Scaffold", "Scaffold", "Rotation", new String[]{"Strict", "Simple", "Lazy", "Offset"});
+        }
+    } else if (alternativeSuffixMode == 2) { // Raven
+        setDataArray("KillAura", "KillAura", "Rotation", new String[]{"Silent", "Lock view", "NoRotationSet"});
+        setDataSlider("Disabler", "Disabler", "", new String[]{""});
+        setDataSlider("Virtu", "Virtu", "", new String[]{""});
+        setDataSlider("TargetStrafe", "TargetStrafe", "", new String[]{""});
+        setDataSlider("AntiKnockback", "Velocity", "%v1% %v2%", new String[]{"Horizontal", "Vertical"});
+        setDataSlider("FastMine", "", "%v1x", new String[]{"Break speed"});
+        setDataSlider("Jump Reset", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("WTap", "", "%v1%", new String[]{"Chance"});
+        setDataSlider("InvManager", "InvManager", "", new String[]{""});
+        setDataArray("NoSlow", "NoSlow", "Mode", new String[]{"Vanilla", "Float", "Interact", "Invalid", "Jump", "Sneak"});
+        setDataArray("NoFall", "", "Mode", new String[]{"Spoof", "Single", "Extra", "NoGround A", "NoGround B", "Precision", "Position"});
+        setDataArray("BedAura", "BedAura", "Break mode", new String[]{"Legit", "Instant", "Swap"});
+        setDataArray("Long Jump", "Long Jump", "", new String[]{""});
+        setDataArray("Scaffold", "Scaffold", "Fast scaffold", new String[]{"Disabled", "Vanilla", "Constant", "Edge", "Float", "Jump", "Jump", "Jump", "Jump", "Keep-Y", "Keep-Y", "Slide"});
+        setDataArray("Bhop", "", "Mode", new String[]{"Strafe", "Ground", "Glide", "Low", "Semi", "Low", "Semi", "Hurt time"});
+        setDataArray("Speed", "Speed", "Speed", new String[]{"Vanilla", "Float"});
         }
     } else { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
