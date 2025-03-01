@@ -269,6 +269,8 @@ void updateSliders() {
         setDataArray("Long Jump", "", "", new String[]{""});
         setDataSlider("Safewalk", "", "", new String[]{""});
         setDataSlider("AntiBot", "", "", new String[]{""});
+        setDataSlider("Disabler", "", "", new String[]{""});
+        setDataSlider("Virtu", "", "", new String[]{""});
 
     } else if (alternativeSuffixMode == 0) { // Bypass
         setDataArray("KillAura", "KillAura", "Autoblock", new String[]{"Legit", "Blinkless", "Damage", "Visual", "Semi", "Packet", "Interaction", "Blink", "Buffer"});
