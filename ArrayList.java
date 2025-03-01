@@ -274,7 +274,7 @@ void updateSliders() {
         setDataSlider("TargetStrafe", "", "", new String[]{""});
 
         setDataArray("KillAura", "KillAura", "Rotation mode", new String[]{"Silent", "Lock view", "None"});
-        if (modules.getSlider("Scaffold", "Rotation mode") > 2) {
+        if (modules.getSlider("KillAura", "Rotation mode") > 2) {
             setDataSlider("KillAura", "KillAura", "v1%", new String[]{"FOV"});
         }
 
